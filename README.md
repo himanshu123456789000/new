@@ -8,8 +8,8 @@ This is a sample Rails application that demonstrates how to integrate Stripe pay
 2. Install dependencies with `bundle install`
 3. Create a `.env` file with your Stripe API keys:
 
-STRIPE_PUBLISHABLE_KEY=<your publishable key>
-STRIPE_SECRET_KEY=<your secret key>
+STRIPE_PUBLISHABLE_KEY="your publishable key"
+STRIPE_SECRET_KEY="your secret key"
 
 
 4. Migrate the database with `rails db:migrate`
