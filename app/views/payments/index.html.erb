@@ -1,0 +1,30 @@
+<!-- app/views/products/index.html.erb -->
+
+<% flash.each do |type, message| %>
+  <div class="alert alert-<%= type %>">
+    <%= message %>
+  </div>
+<% end %>
+
+<h1>Product List</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Buy Now</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= number_to_currency(product.price, unit: "₹") %></td>
+        <td><%= link_to "Pay with Stripe", new_payment_path(product_id: product.id), class: "btn btn-primary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

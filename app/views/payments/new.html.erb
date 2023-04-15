@@ -1,0 +1,21 @@
+<!-- app/views/products/show.html.erb -->
+
+<div class="product-container">
+  <h1><%= @product.name %></h1>
+  <div class="product-details">
+    <div class="product-image">
+      <img src="https://media.istockphoto.com/id/1328049157/photo/mens-short-sleeve-t-shirt-mockup-in-front-and-back-views.jpg?b=1&s=170667a&w=0&k=20&c=CZ5Emlrh-C4jzojJ8b8YBy1frxpQr6aMcLmEBrkty7Q=" alt="alternate_text">
+    </div>
+    <div class="product-description">
+      <%= @product.description %>
+    </div>
+    <div class="product-price">
+      <%= number_to_currency(@product.price, unit: '₹') %>
+    </div>
+  </div>
+</div>
+
+
+<div class="button-wrapper">
+  <a href="<%= @session.url %>" class="btn btn-primary">Pay with Stripe</a>
+</div>
